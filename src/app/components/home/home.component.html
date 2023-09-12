@@ -1,5 +1,9 @@
 <div class="container">
-  <input type="text" placeholder="search" [(ngModel)]="searchText">
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="button-addon2"[(ngModel)]="searchText">
+    <button class="btn btn-danger"type="button" id="button-addon2" (click)="searchText =''">Delete search</button>
+  </div>
+
     <table class="table">
         <thead>
           <tr>
