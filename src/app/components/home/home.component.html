@@ -1,0 +1,49 @@
+<div class="container">
+  <input type="text" placeholder="search" [(ngModel)]="searchText">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Brand</th>
+            <th scope="col">Model</th>
+            <th scope="col">Camera</th>
+            <th scope="col">Color</th>
+            <th scope="col">OS</th>
+            <th scope="col">Storage</th>
+            <th scope="col">Comment</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let phone of phones | search: searchText">
+            <td><input class=form-control type="text" [(ngModel)]="phone.brand"></td>
+            <td><input class=form-control type="text" [(ngModel)]="phone.model"></td>
+            <td><input class=form-control type="text" [(ngModel)]="phone.camera"></td>
+            <td>
+                <select class="form-select" aria-label="Default select example" [(ngModel)]="phone.color_code">
+                    <option selected>--please choose--</option>
+                    <option [value]="'12345GREEN9012'">Green</option>
+                    <option [value]="'23432BLUE5678'">Blue</option>
+                    <option [value]="'23456GRAY7890'">Gray</option>
+                    <option [value]="'32423RED3242'">Red</option>
+                    <option [value]="'45678PURPLE9012'">Purple</option>
+                    <option [value]="'56789YELLOW3456'">Yellow</option>
+                    <option [value]="'67890ORANGE2345'">Orange</option>
+                    <option [value]="'78901PINK2345'">Pink</option>
+                    <option [value]="'89012BLACK5678'">Black</option>
+                    <option [value]="'90123WHITE9012'">White</option>
+                  </select>
+            </td>
+            <td><input class=form-control type="text" [(ngModel)]="phone.os"></td>
+            <td><input class=form-control type="text" [(ngModel)]="phone.storage"></td>
+            <td><input *ngIf="phone.comment" class=form-control type="text" [(ngModel)]="phone.comment.text"></td>
+            <td>
+                <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+                    <button (click)="updatePhones(phone)" type="button" class="btn btn-success">Frissítés</button>
+                    <button (click)="deletePhones(phone)"  type="button" class="btn btn-danger">Törlés</button>
+                  </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+

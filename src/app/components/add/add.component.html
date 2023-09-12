@@ -1,0 +1,45 @@
+<div class="container">
+Brand
+<input type="text" class="form-control" [(ngModel)]="newPhone.brand">
+
+Camera
+<input type="text" class="form-control" [(ngModel)]="newPhone.camera">
+
+Color code
+
+    <select class="form-select" aria-label="Default select example" [(ngModel)]="newPhone.color_code">
+        <option selected>--please choose--</option>
+        <option [value]="'12345GREEN9012'">Green</option>
+        <option [value]="'23432BLUE5678'">Blue</option>
+        <option [value]="'23456GRAY7890'">Gray</option>
+        <option [value]="'32423RED3242'">Red</option>
+        <option [value]="'45678PURPLE9012'">Purple</option>
+        <option [value]="'56789YELLOW3456'">Yellow</option>
+        <option [value]="'67890ORANGE2345'">Orange</option>
+        <option [value]="'78901PINK2345'">Pink</option>
+        <option [value]="'89012BLACK5678'">Black</option>
+        <option [value]="'90123WHITE9012'">White</option>
+      </select>
+
+
+Description
+<input type="text" class="form-control" [(ngModel)]="newPhone.description">
+
+Display size
+<input type="text" class="form-control" [(ngModel)]="newPhone.display_size">
+
+Model
+<input type="text" class="form-control" [(ngModel)]="newPhone.model">
+
+
+OS
+<input type="text" class="form-control" [(ngModel)]="newPhone.os">
+
+Storage
+<input type="text" class="form-control" [(ngModel)]="newPhone.storage">
+
+Comment
+<input *ngIf="newPhone.comment" type="text" class="form-control" [(ngModel)]="newPhone.comment.text">
+
+<button (click)="addPhone(newPhone)" class="btn btn-success mt-3 mb-3">Add phone</button>
+</div>
